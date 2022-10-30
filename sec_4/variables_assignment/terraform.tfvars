@@ -1,0 +1,1 @@
+instance_type = "t2.small" # will override the default instance type

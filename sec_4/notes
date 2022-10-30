@@ -1,0 +1,7 @@
+terraform apply -var="instance-type=t2.small"
+terraform plan -var-file="custom
+.tfvars"
+export TF_VAR_instance_type="t2.nano"
+$TF_VAR_instance_type
+
+
