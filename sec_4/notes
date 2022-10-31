@@ -3,5 +3,4 @@ terraform plan -var-file="custom
 .tfvars"
 export TF_VAR_instance_type="t2.nano"
 $TF_VAR_instance_type
-
-
+terraform console

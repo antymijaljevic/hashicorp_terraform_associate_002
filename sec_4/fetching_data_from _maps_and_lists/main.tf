@@ -8,12 +8,24 @@ terraform {
 }
 
 provider "aws" {
-  region     = "us-east-1"
-  access_key = "AKIAS62R2AEN5XAME3FL"
-  secret_key = "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"
+  profile = "default"
 }
 
 resource "aws_instance" "my-ec2" {
   ami           = "ami-09d3b3274b6c5d4aa"
-  instance_type = "t2.micro"
+  # instance_type = var.types["us-west-2"]
+  instance_type = var.lists[0]
+}
+
+variable "lists" {
+  type    = list(any)
+  default = ["t2.micro", "t2.small"]
+}
+
+variable "types" {
+  type = map(any)
+  default = {
+    us-east-1 = "t2.micro"
+    us-west-2 = "t2.small"
+  }
 }
