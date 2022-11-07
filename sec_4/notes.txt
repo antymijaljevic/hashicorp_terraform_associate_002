@@ -4,3 +4,8 @@ terraform plan -var-file="custom
 export TF_VAR_instance_type="t2.nano"
 $TF_VAR_instance_type
 terraform console
+export TF_LOG=TRACE
+export TF_LOG_PATH=/tmp/terraform-crash.log
+terraform fmt
+terraform validate
+terraform taint aws_instance.my-ec2
