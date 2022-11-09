@@ -3,9 +3,23 @@ terraform plan -var-file="custom
 .tfvars"
 export TF_VAR_instance_type="t2.nano"
 $TF_VAR_instance_type
-terraform console
+
 export TF_LOG=TRACE
 export TF_LOG_PATH=/tmp/terraform-crash.log
+
+terraform console
 terraform fmt
 terraform validate
 terraform taint aws_instance.my-ec2
+
+terraform graph > graph.dot
+sudo apt install graphviz -y
+cat graph.dot | dot -Tsvg > graph.svg
+
+terraform plan -out=demopath
+terraform apply demopath
+
+terraform output names
+
+terraform plan -refresh=false
+terraform plan -refresh=false -target=aws_instance.myec-3

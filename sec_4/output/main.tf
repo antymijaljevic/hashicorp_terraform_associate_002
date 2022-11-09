@@ -19,6 +19,10 @@ resource "aws_iam_user" "lb" {
   path = "/system/"
 }
 
+output "names" {
+  value = aws_iam_user.lb[*].name
+}
+
 output "arns" {
   value = aws_iam_user.lb[*].arn
 }

@@ -1,4 +1,6 @@
 terraform {
+  required_version = "< 1.3" # limit the version of terraform
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -13,12 +15,10 @@ provider "aws" {
   secret_key = "Iiuaj8llRfRCsfbCSmv4Pao5dW1F2ORzK/I5oJnS"
 }
 
-resource "aws_iam_user" "lb" {
-  name = "iamuser.${count.index}"
-  count = 3
-  path = "/system/"
-}
-
-output "arns" {
-  value = aws_iam_user.lb[*].arn
+resource "aws_instance" "myec2" {
+  ami           = "ami-0c2b8ca1dad447f8a"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "myec2"
+  }
 }
