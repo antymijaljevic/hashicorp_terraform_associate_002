@@ -8,23 +8,25 @@ terraform {
 }
 
 provider "aws" {
-  region     = "us-east-1"
-  access_key = "AKIAQMZRBKZA4BDIJYU6"
-  secret_key = "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"
+  region = "us-east-1"
+  access_key = "AKIARWYDZBOLITV7A5EF"
+  secret_key = "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"
 }
 
-resource "aws_instance" "myec-1" {
-  ami           = "ami-0c2b8ca1dad447f8a"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "myec-1"
-  }
+resource "aws_iam_user" "lb" {
+  name = "iamuser.${count.index}"
+  count = 3
+  path = "/system/"
 }
 
-resource "aws_instance" "myec-2" {
-  ami           = "ami-0c2b8ca1dad447f8a"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "myec-2"
-  }
+output "arns" {
+  value = aws_iam_user.lb[*].arn
+}
+
+output "name" {
+  value = aws_iam_user.lb[*].name
+}
+
+output "all" {
+  value = zipmap(aws_iam_user.lb[*].name, aws_iam_user.lb[*].arn)
 }
