@@ -17,8 +17,25 @@ provider "aws" {
 resource "aws_instance" "my_ec2" {
   ami           = "ami-0c2b8ca1dad447f8a"
   instance_type = "t2.micro"
+  associate_public_ip_address = true
+  key_name = "demo"
+  vpc_security_group_ids = [ "sg-0bf2c9bac380549af" ]
 
-  provisioner "local-exec" {
-    command = "echo ${aws_instance.my_ec2.public_ip} > ip_address.txt"
+  tags = {
+    Name = "my_ec2"
+  }
+
+  connection {
+    type = "ssh"
+    user = "ec2-user"
+    host = self.public_ip
+    private_key = file("./demo.pem")
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo amazon-linux-extras install nginx1 -y",
+      "sudo systemctl start nginx",
+    ]
   }
 }
