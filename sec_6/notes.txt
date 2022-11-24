@@ -1,0 +1,6 @@
+terraform workspace
+terraform show
+terraform workspace -h
+terraform workspace list
+terraform select <dev>
+terraform workspace new dev
