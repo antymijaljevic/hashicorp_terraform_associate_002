@@ -1,1 +1,9 @@
 terraform force-unlock
+
+terraform state list
+terraform state move
+terraform state mv aws_instance.web aws_instance.web_new
+terraform state pull
+terraform push
+terraform state rm aws_eip.lb
+terraform state show aws_instance.web

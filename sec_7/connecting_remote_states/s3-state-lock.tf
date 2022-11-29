@@ -3,7 +3,8 @@
 terraform {
   backend "s3" {
     bucket = "kplabs-terraform-backend-888"
-    key    = "network/terraform.tfstate"
+    key    = "network/demo.tfstate"
     region = "us-east-1"
+    dynamodb_table = "terraform-state-locking" # Partition key LockID (String)
   }
 }
