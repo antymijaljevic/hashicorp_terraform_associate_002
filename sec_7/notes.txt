@@ -7,3 +7,5 @@ terraform state pull
 terraform push
 terraform state rm aws_eip.lb
 terraform state show aws_instance.web
+
+terraform import aws_instance.my_server i-0791b06199eea29c
