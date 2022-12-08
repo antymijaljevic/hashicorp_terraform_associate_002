@@ -80,3 +80,16 @@
     * Apply
 
 
+```Exam 3```
+
+* Question 4: Data source return?
+    * all possible data of a specific Amazon Machine Image from AWS
+
+
+* Question 20: Provider alias?
+    * using the same provider with different configurations for different resources
+
+* Question 32: Remove the version parameter and hit init again?
+    * Terraform would use the existing module already downloaded
+
+```Exam 4```
