@@ -1,4 +1,3 @@
-
 # optional block
 terraform {
   required_providers {
@@ -12,6 +11,12 @@ terraform {
 # mandatory block
 provider "aws" {
   region = "us-east-1"
-  access_key = "AKIA22RC3YCYPM2JAV7C"
-  secret_key = "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"
 }
+
+# export AWS_ACCESS_KEY_ID="" && export AWS_SECRET_ACCESS_KEY=""
+
+resource "null_resource" "demo" {
+    provisioner "local-exec" {
+        command = "echo Hi"
+    }
+}  

@@ -1,4 +1,75 @@
-```Exam 0``` 100%
+```Exam 0.1``` 100%
+* Question 20: To prevent this, Terraform state file lock must be used. Is there a additional terraform code required to implement this functionality with local backend?
+    * False
+
+
+```Exam 0.2``` 100%
+* Question 6:James has decided to not use the terraform.tfvars file, instead, he wants to store all data into custom.tfvars file? Is it possible?
+    * Yes, terraform apply -var-file="custom.tfvars"
+
+* Question 30: Alice has started to make use of Terraform Cloud Workspace and has linked a Git Repository to it.
+Whenever a new code change is committed to version control repository, will Terraform automatically run the terraform plan operation?
+    * True
+
+```Exam 0.3``` 
+
+* Question 8: Alice works for Enterprise Corp and they have recently started to use Terraform Cloud.
+What is the way in which the log output of terraform plan and apply operation that are running in Terraform Cloud be streamed in the local terminal?
+    * Remote Backends
+
+* Question 13: Matthew has recently subscribed to Terraform Cloud Trial version.
+As part of POC, he is testing the Sentinel feature. At what stage does the Sentinel feature run in Terraform Cloud?
+    * Before APPLY operation
+
+* Question 14: Alice wants to create a DOT file in Terraform.
+Which terraform command can be used to create it?
+    * terraform graph
+
+
+* Question 23:
+    Matthew is currently running a write operation on a terraform project and the state file is currently locked.
+    If Bob runs a terraform state list command on the same project, will this action be allowed or blocked?
+    * Allowed
+
+```Exam 0.4``` 100%
+
+* Question 6: Is the Terraform Workspace feature in Terraform Cloud same as the Terraform workspace feature that is present in the free open-source version of Terraform?
+    * False
+
+* Question 8: Which of the features are unique to Terraform Cloud BUSINESS Plan?
+    * Audit Logging
+    * Clustering Functionality
+    * Private Network Connectivity
+
+* Question 18: There is a requirement to use a specific branch instead of the default branch. What is the way to achieve this?
+    * ref=v2.0.0
+
+```Exam 0.5``` 100 %
+* Question 7: What are the OS that are supported by Terraform ENTERPRISE?
+    * Ubuntu
+    * Oracle
+    * RHEL
+    * CentOS
+    * Amazon Linux
+    * Debian
+
+
+* Question 10: Which among the following Terraform backends support State locking functionality?
+    * S3
+    * azurerm
+    * consul
+
+
+* Question 11: Which data storage among these is supported in Terraform Enterprise?
+    * PostgreSQL
+
+* Question 15: In a Terraform project, before using a new provider, what are the actions that needs to be performed?
+    * Provider must first be initialized
+    * Provider details must be declared within the terraform configuration
+
+
+
+```Exam 0``` 100% 178 Questions total
 
 * Question 9: Does the Terraform Cloud provide feature to encrypt the state file stored at-rest and also support SSL/TLS for in-transit data?
     * True
@@ -33,6 +104,8 @@
 
 
 
+
+
 ```Exam 1``` 100%
 
 * Question 5: Implicit dependency
@@ -61,6 +134,9 @@
 * Question 15: Terrafrom recreate resource
     * terraform apply -replace=aws_instance.web
     * terraform taint (until 0.15.x)
+
+* Question 18: A user runs terraform init on their RHEL based server and per the output, two provider plugins are downloaded
+    * .terraform/providers
 
 * Question 19: Environment variables
     * TF_VAR_(variable_name)
