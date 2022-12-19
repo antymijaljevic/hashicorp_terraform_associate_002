@@ -162,7 +162,7 @@ Which terraform command can be used to create it?
     * terraform.tfstate.d
 
 
-```Exam 2``` 98%
+```Exam 2``` 100%
 
 * Question 1: Terraform OpenSourceSoftware/CLI state   file?
     * current working directory
